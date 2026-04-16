@@ -1000,6 +1000,169 @@
           white-space: normal;
         }
       }
+      /* ================================================
+         RESPONSIVE — Android, Samsung & all mobiles
+         Scales from 320px up to 430px+ screens
+         ================================================ */
+
+      /* Body — remove side padding on small screens */
+      @media (max-width: 430px) {
+        body {
+          padding: 0;
+        }
+      }
+
+      /* Fluid wrapper */
+      .main-content {
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      /* Welcome screen */
+      .welcome-screen {
+        width: 100%;
+      }
+      .welcome-card {
+        width: 100%;
+        max-width: 430px;
+        height: 100dvh;
+        min-height: 100vh;
+      }
+
+      /* ── Hero ── */
+      .hero {
+        width: 100%;
+        /* Height scales proportionally with width */
+        height: min(732px, 170vw);
+      }
+
+      /*
+        % left/width = pixel / 430 * 100
+        % top        = pixel / 732 * 100
+        Percentages always reference the containing block (.hero),
+        so centering stays perfect on every screen width.
+      */
+      .date-bg {
+        width: 47%;           /* 202/430 — scales with hero */
+        left: 50%;
+        transform: translateX(-50%); /* always perfectly centered */
+        top: 12.4%;           /* 91/732 */
+      }
+      .date-bg span {
+        /* Font scales with vw; body padding is 0 on mobile so vw = container width */
+        font-size: min(171px, 39.8vw);
+        line-height: min(170px, 39.5vw);
+        letter-spacing: min(5.13px, 1.2vw);
+      }
+
+      /* Couple names */
+      .names {
+        width: 53%;           /* 228/430 — scales with hero */
+        left: 50%;
+        transform: translateX(-50%); /* always perfectly centered */
+        top: 34.97%;          /* 256/732 */
+        font-size: min(65px, 15.1vw);
+        line-height: min(70px, 16.3vw);
+        text-align: center;
+      }
+
+      /* Flower */
+      .flower-top-right {
+        width: min(225.24px, 52.4vw);
+        height: auto;
+        left: 43.4%;         /* 186.61/430 */
+      }
+
+      /* ── Countdown ── */
+      .countdown {
+        width: 100%;
+        max-width: 430px;
+        height: auto;
+        min-height: 198px;
+        padding: 35px 0 38px;
+        overflow: visible;
+      }
+      .countdown-title {
+        width: 90%;
+        left: 5%;
+        top: 20px;
+      }
+      .countdown-values {
+        width: 69.3%;        /* 298/430 */
+        left: 15.35%;        /* 66/430 */
+        font-size: min(45px, 10.5vw);
+        line-height: normal;
+        top: 65px;
+      }
+      .count-label.days  { left: 18.1%;  top: 149px; } /* 78/430  */
+      .count-label.hours { left: 37.2%;  top: 149px; } /* 160/430 */
+      .count-label.min   { left: 59.3%;  top: 149px; } /* 255/430 */
+      .count-label.sec   { left: 77.9%;  top: 149px; } /* 335/430 */
+
+      /* ── Fluid content widths ── */
+      .quote            { width: min(312px, 88%); }
+      .invitation-text  { width: min(313px, 88%); }
+      .gift-text        { width: min(288px, 88%); }
+      .account-number   { width: min(230px, 88%); white-space: normal; }
+      .guest-names      { width: min(230px, 88%); }
+      .guest-count      { width: min(220px, 88%); white-space: normal; }
+      .parents-grid     { width: min(340px, calc(100% - 40px)); }
+      .parent-side      { width: 48%; }
+
+      /* Celebration */
+      .celebration-couple { width: min(214px, 88%); }
+      .celebration-date   { width: min(218px, 88%); }
+      .celebration-title,
+      .section-title      { white-space: normal; }
+
+      /* Location button */
+      .location-button { width: min(208px, 65%); }
+
+      /* ── RSVP form ── */
+      .rsvp-section {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .rsvp-select-field,
+      .rsvp-message-field,
+      .rsvp-button {
+        width: 100%;
+        max-width: 350px;
+        box-sizing: border-box;
+      }
+      .rsvp-question,
+      .rsvp-message-title,
+      .rsvp-deadline {
+        width: auto;
+        white-space: normal;
+      }
+
+      /* ── Very small screens (320px – 360px) ── */
+      @media (max-width: 360px) {
+        .date-bg span {
+          font-size: 38vw;
+          line-height: 38vw;
+        }
+        .names {
+          font-size: 14vw;
+          line-height: 15.5vw;
+        }
+        .celebration-title,
+        .section-title {
+          font-size: 28px;
+          line-height: 38px;
+        }
+        .parent-names {
+          font-size: 13px;
+        }
+        .event-place {
+          font-size: 15px;
+          white-space: normal;
+          line-height: 1.5;
+        }
+      }
     </style>
   </head>
   <script>
