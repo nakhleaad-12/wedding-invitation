@@ -19,6 +19,35 @@
         font-weight: 400;
         font-style: normal;
       }
+      .main-screen {
+        position: relative;
+        width: 100%;
+        min-height: 100vh; /* Allow the content to take the full height */
+        overflow: auto; /* Allow scrolling for content */
+        background: url("./assets/background.jpg") repeat center top; /* Repeat image vertically */
+        background-size: auto; /* Let it repeat at natural size */
+      }
+
+      .main-content {
+        position: relative;
+        z-index: 1; /* Ensure content stays on top */
+        max-width: 430px;
+        margin: 0 auto;
+        padding: 0;
+        text-align: center;
+        min-height: 100vh;
+        background: var(--bg-main); /* Beige background for content area */
+      }
+      .countdown {
+        position: relative;
+        width: 430px;
+        height: 198px;
+        margin: 0 auto;
+        overflow: hidden;
+        background: #ffffff; /* White background for countdown */
+      }
+
+      /* Add beige background to individual sections that need it */
 
       :root {
         --bg-main: #f8f4ee;
@@ -35,24 +64,15 @@
       }
 
       body {
-        background: #ececec;
         font-family: "Montserrat", sans-serif;
         display: flex;
         justify-content: center;
         padding: 24px 12px;
       }
 
-      .invite {
-        position: relative;
-        width: 430px;
-        background: var(--bg-main);
-        overflow: hidden;
-      }
-
       .hero {
         position: relative;
         height: 732px;
-        background: var(--bg-main);
         overflow: hidden;
       }
 
@@ -104,14 +124,6 @@
         max-width: none;
         user-select: none;
         pointer-events: none;
-      }
-
-      .countdown {
-        position: relative;
-        width: 430px;
-        height: 198px;
-        background: #ffffff;
-        overflow: hidden;
       }
 
       .countdown-title {
@@ -207,7 +219,6 @@
       .quote-section {
         position: relative;
         padding-bottom: 20px;
-        background: var(--bg-main);
         text-align: center;
         padding: 98px 30px 40px;
         overflow: hidden;
@@ -242,14 +253,13 @@
       .divider {
         width: 1px;
         height: 73px;
-        background: var(--text-primary);
         margin: 88px auto 0;
+        background-color: #707070;
         opacity: 0.9;
       }
 
       .parents-section {
         position: relative;
-        background: var(--bg-main);
         padding: 30px 0 140px;
         text-align: center;
         overflow: hidden;
@@ -353,7 +363,6 @@
 
       .celebration-section {
         position: relative;
-        background: var(--bg-main);
         text-align: center;
         padding: 90px 20px 70px;
         min-height: 520px;
@@ -385,8 +394,8 @@
       .celebration-divider {
         width: 1px;
         height: 74px;
-        background: var(--text-primary);
         margin: 0 auto 92px;
+        background-color: #707070;
       }
 
       .celebration-title {
@@ -465,7 +474,6 @@
         height: 45px;
         margin: 0 auto;
         border: 1px solid var(--accent-gold);
-        background: #ffffff;
         text-decoration: none;
         font-family: "Montserrat", sans-serif;
         font-size: 14px;
@@ -473,24 +481,26 @@
         letter-spacing: 0.35px;
         text-transform: uppercase;
         color: var(--text-primary);
+        background-color: #ffffff;
       }
 
       .party-location-button {
         margin-top: 29px;
+        background-color: #ffffff;
       }
 
       .gift-transition {
         position: relative;
         height: 200px;
-        background: var(--bg-main);
         overflow: hidden;
       }
 
       .gift-transition-divider {
         width: 1px;
         height: 74px;
-        background: var(--text-primary);
         margin: 86px auto 0;
+        background-color: #707070;
+
         opacity: 0.9;
       }
 
@@ -508,7 +518,6 @@
         position: relative;
         text-align: center;
         padding: 42px 20px 72px;
-        background: var(--bg-main);
         overflow: hidden;
       }
 
@@ -557,15 +566,14 @@
         position: relative;
         text-align: center;
         padding: 88px 20px 54px;
-        background: var(--bg-main);
         overflow: hidden;
       }
 
       .gift-guest-divider {
         width: 1px;
         height: 74px;
-        background: var(--text-primary);
         margin: 0 auto 92px;
+        background-color: #707070;
         opacity: 0.9;
       }
 
@@ -614,7 +622,6 @@
         font-style: italic;
       }
       .rsvp-section {
-        background: var(--bg-main);
         text-align: center;
         padding: 34px 40px 62px;
       }
@@ -637,7 +644,6 @@
         height: 51px;
         margin: 0 auto 52px;
         border: 1px solid var(--accent-gold);
-        background: #ffffff;
         display: flex;
         align-items: center;
         padding-left: 17px;
@@ -670,7 +676,6 @@
         height: 106px;
         margin: 0 auto 34px;
         border: 1px solid var(--accent-gold);
-        background: #ffffff;
         display: flex;
         align-items: flex-start;
         padding-top: 14px;
@@ -704,7 +709,6 @@
         height: 45px;
         margin: 0 auto;
         border: none;
-        background: var(--accent-gold);
         color: #f8f4ee;
         font-family: "Montserrat", sans-serif;
         font-size: 15px;
@@ -713,6 +717,7 @@
         font-weight: 700;
         text-transform: uppercase;
         cursor: pointer;
+        background-color: #c2a477;
       }
       .rsvp-form {
         width: 100%;
@@ -722,7 +727,6 @@
       .rsvp-message-field {
         width: 350px;
         border: 1px solid var(--accent-gold);
-        background: #ffffff;
         color: var(--text-primary);
         font-family: "Montserrat", sans-serif;
         outline: none;
@@ -788,6 +792,107 @@
         border-radius: 50%;
         animation: spin 0.8s linear infinite;
       }
+      :root {
+        --unnamed-color-c6a77d: #c6a77d;
+        --unnamed-color-ffffff: #ffffff;
+        --unnamed-color-f8f4ee: #f8f4ee;
+        --unnamed-color-707070: #707070;
+      }
+
+      .welcome-screen {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99999;
+        width: 100%;
+        height: 100vh; /* Full height */
+        overflow: hidden;
+        position: relative;
+      }
+
+      .background-img {
+        position: absolute; /* Position the image as a background */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensure the image covers the entire screen */
+        z-index: -1; /* Place the image behind the content */
+      }
+
+      .welcome-card {
+        position: relative;
+        width: 430px;
+        height: 932px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+        border-radius: 20px; /* optional: smooth corners */
+      }
+
+      /* Monogram and Text Styles */
+      .welcome-monogram {
+        position: absolute;
+        top: 140px; /* Adjust the top position */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px; /* Set to half the original size (adjust as needed) */
+        z-index: 2;
+      }
+      .welcome-save-date {
+        font-family: "Cinzel", serif;
+        font-size: 30px;
+        color: #707070;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+
+      .welcome-couple-name {
+        font-family: "Astallya Script Demo", cursive;
+        font-size: 43px;
+        color: #707070;
+        margin-bottom: 30px;
+      }
+
+      /* Button Styling */
+      .welcome-start-btn {
+        background: #c6a77d;
+        color: #fffbf8;
+        border: none;
+        padding: 12px 30px;
+        cursor: pointer;
+        font-family: "Montserrat", sans-serif;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0;
+        transition:
+          opacity 0.25s ease,
+          transform 0.2s ease;
+      }
+
+      .welcome-start-btn:hover {
+        opacity: 0.92;
+      }
+
+      .welcome-start-btn:active {
+        transform: scale(0.98);
+      }
+
+      /* Mobile Adjustments */
+      @media (max-width: 460px) {
+        .welcome-card {
+          width: 100%;
+          min-height: 100vh;
+          height: 100%;
+          padding: 20px;
+        }
+      }
 
       @keyframes spin {
         from {
@@ -823,8 +928,16 @@
           padding: 0;
         }
 
-        .invite {
-          width: 100%;
+        @media (max-width: 460px) {
+          .main-content {
+            width: 100%;
+            max-width: 100%;
+          }
+
+          .countdown {
+            width: 100%;
+            max-width: 430px;
+          }
         }
 
         .hero,
@@ -899,6 +1012,25 @@
 
       updateCountdown();
       setInterval(updateCountdown, 1000);
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const startBtn = document.getElementById("startBtn");
+      const welcomeScreen = document.getElementById("welcomeScreen");
+      const mainContent = document.getElementById("mainContent");
+
+      if (startBtn && welcomeScreen && mainContent) {
+        startBtn.addEventListener("click", function () {
+          welcomeScreen.style.opacity = "0";
+          welcomeScreen.style.transition = "opacity 0.4s ease";
+
+          setTimeout(function () {
+            welcomeScreen.style.display = "none";
+            mainContent.style.display = "block";
+          }, 400);
+        });
+      }
     });
   </script>
 
@@ -1079,237 +1211,276 @@
     });
   </script>
   <body>
-    <main class="invite">
-      <section class="hero">
-        <div class="date-bg">
-          <span>14</span>
-          <span>06</span>
-          <span>26</span>
-        </div>
+    <div id="welcomeScreen" class="welcome-screen">
+      <img
+        src="./assets/start.jpg"
+        alt="Background Image"
+        class="background-img"
+      />
 
-        <h1 class="names">
-          Charbel<br />
-          &amp;<br />
-          Corine
-        </h1>
-
+      <div class="welcome-card">
         <img
-          src="./assets/flower-top-right.png"
-          alt=""
-          class="flower-top-right"
+          src="./assets/objects_Artboard 1 copy 16.png"
+          alt="Monogram Image"
+          class="welcome-monogram"
         />
-      </section>
 
-      <section class="countdown">
-        <p class="countdown-title">COUNTING DOWN TO FOREVER</p>
+        <p class="welcome-save-date">SAVE OUR DATE</p>
 
-        <div class="countdown-values" id="countdownValues">
-          60 : 05 : 22 : 31
-        </div>
+        <h1 class="welcome-couple-name">Charbel &amp; Corine</h1>
 
-        <span class="count-label days" id="countLabelDays">DAYS</span>
-        <span class="count-label hours" id="countLabelHours">HOURS</span>
-        <span class="count-label min" id="countLabelMin">MIN</span>
-        <span class="count-label sec" id="countLabelSec">SEC</span>
-      </section>
-
-      <section class="quote-section">
-        <p class="quote">
-          “Therefore what God has joined together,<br />
-          let no one separate”
-        </p>
-
-        <span class="verse">MARK 10:9</span>
-
-        <div class="divider"></div>
-        <img
-          src="./assets/flower-top-right.png"
-          alt=""
-          class="parents-flower-right"
-        />
-      </section>
-
-      <section class="parents-section">
-        <div class="intro">
-          <p>With joyous hearts,</p>
-        </div>
-
-        <div class="parents-grid">
-          <div class="parent-side">
-            <p class="parent-label">MR. &amp; MRS.</p>
-            <p class="parent-names">MICHEL &amp; ELHAM AAD</p>
-          </div>
-
-          <div class="parent-side">
-            <p class="parent-label">MR. &amp; MRS.</p>
-            <p class="parent-names">PIERRE &amp; RIMA ABI JAOUDÉ</p>
-          </div>
-        </div>
-
-        <p class="invitation-text">
-          Request the honor of your presence<br />
-          at the wedding of their son &amp; daughter
-        </p>
-
-        <img
-          src="./assets/flower-bottom-right.png"
-          alt=""
-          class="flower-bottom-right"
-        />
-      </section>
-
-      <section class="celebration-section">
-        <h2 class="celebration-couple">
-          Charbel<br />
-          &amp;<br />
-          Corine
-        </h2>
-
-        <p class="celebration-date">SUNDAY, JUNE 14, 2026</p>
-
-        <div class="celebration-divider"></div>
-
-        <h3 class="celebration-title">the celebration</h3>
-
-        <div class="event-block ceremony-block">
-          <p class="event-label">WEDDING CEREMONY</p>
-          <h4 class="event-place">SAINT PAUL’S CATHEDRAL, HARISSA</h4>
-          <p class="event-time">AT 5:00 PM</p>
-          <a href="#" class="location-button">VIEW LOCATION</a>
-        </div>
-
-        <div class="event-block party-block">
-          <p class="event-label">WEDDING PARTY</p>
-          <h4 class="event-place">KYRA VENUE, RAYFOUN</h4>
-          <p class="event-time">AT 7:00 PM</p>
-        </div>
-
-        <a href="#" class="location-button party-location-button"
-          >VIEW LOCATION</a
-        >
-
-        <img
-          src="./assets/flower-left-small.png"
-          alt=""
-          class="celebration-flower-left"
-        />
-      </section>
-
-      <div class="gift-transition">
-        <div class="gift-transition-divider"></div>
-
-        <img
-          src="./assets/flower-right-mid.png"
-          alt=""
-          class="gift-transition-flower"
-        />
+        <button id="startBtn" class="welcome-start-btn">Tap to start</button>
       </div>
-
-      <section class="gift-section">
-        <h3 class="section-title">gift registry</h3>
-
-        <p class="gift-text">
-          Your love, laughter &amp; presence are all<br />
-          we could wish for on our special day.<br />
-          For those who wish, a wedding registry<br />
-          is available at Whish Money
-        </p>
-
-        <p class="account-number">ACCOUNT NO: 20785854</p>
-      </section>
-
-      <section class="guest-section">
-        <div class="gift-guest-divider"></div>
-
+    </div>
+    <div id="mainContent" class="main-screen" style="display: none">
+      <!-- <div class="background-wrapper">
         <img
-          src="./assets/flower-left-small.png"
-          alt=""
-          class="gift-flower-left"
+          src="./assets/background.jpg"
+          alt="Main Background"
+          class="background-img1"
         />
+      </div> -->
+      <main class="main-content">
+        <section class="hero">
+          <div class="date-bg">
+            <span>14</span>
+            <span>06</span>
+            <span>26</span>
+          </div>
 
-        <h3 class="section-title guest-title">be our guest</h3>
+          <h1 class="names">
+            Charbel<br />
+            &amp;<br />
+            Corine
+          </h1>
 
-        <div id="guestLoader" class="guest-loader">
-          <span class="spinner"></span>
+          <!-- <img
+            src="./assets/flower-top-right.png"
+            alt=""
+            class="flower-top-right"
+          /> -->
+        </section>
+
+        <section class="countdown">
+          <p class="countdown-title">COUNTING DOWN TO FOREVER</p>
+
+          <div class="countdown-values" id="countdownValues">
+            60 : 05 : 22 : 31
+          </div>
+
+          <span class="count-label days" id="countLabelDays">DAYS</span>
+          <span class="count-label hours" id="countLabelHours">HOURS</span>
+          <span class="count-label min" id="countLabelMin">MIN</span>
+          <span class="count-label sec" id="countLabelSec">SEC</span>
+        </section>
+
+        <section class="quote-section">
+          <p class="quote">
+            “Therefore what God has joined together,<br />
+            let no one separate”
+          </p>
+
+          <span class="verse">MARK 10:9</span>
+
+          <div class="divider"></div>
+          <!-- <img
+            src="./assets/flower-top-right.png"
+            alt=""
+            class="parents-flower-right"
+          /> -->
+        </section>
+
+        <section class="parents-section">
+          <div class="intro">
+            <p>With joyous hearts,</p>
+          </div>
+
+          <div class="parents-grid">
+            <div class="parent-side">
+              <p class="parent-label">MR. &amp; MRS.</p>
+              <p class="parent-names">MICHEL &amp; ELHAM AAD</p>
+            </div>
+
+            <div class="parent-side">
+              <p class="parent-label">MR. &amp; MRS.</p>
+              <p class="parent-names">PIERRE &amp; RIMA ABI JAOUDÉ</p>
+            </div>
+          </div>
+
+          <p class="invitation-text">
+            Request the honor of your presence<br />
+            at the wedding of their son &amp; daughter
+          </p>
+
+          <!-- <img
+            src="./assets/flower-top-right.png"
+            alt=""
+            class="flower-bottom-right"
+          /> -->
+        </section>
+
+        <section class="celebration-section">
+          <h2 class="celebration-couple">
+            Charbel<br />
+            &amp;<br />
+            Corine
+          </h2>
+
+          <p class="celebration-date">SUNDAY, JUNE 14, 2026</p>
+
+          <div class="celebration-divider"></div>
+
+          <h3 class="celebration-title">the celebration</h3>
+
+          <div class="event-block ceremony-block">
+            <p class="event-label">WEDDING CEREMONY</p>
+            <h4 class="event-place">SAINT PAUL’S CATHEDRAL, HARISSA</h4>
+            <p class="event-time">AT 5:00 PM</p>
+            <a href="#" class="location-button">VIEW LOCATION</a>
+          </div>
+
+          <div class="event-block party-block">
+            <p class="event-label">WEDDING PARTY</p>
+            <h4 class="event-place">KYRA VENUE, RAYFOUN</h4>
+            <p class="event-time">AT 7:00 PM</p>
+          </div>
+
+          <a href="#" class="location-button party-location-button"
+            >VIEW LOCATION</a
+          >
+
+          <!-- <img
+            src="./assets/flower-left-small.png"
+            alt=""
+            class="celebration-flower-left"
+          /> -->
+        </section>
+
+        <div class="gift-transition">
+          <div class="gift-transition-divider"></div>
+
+          <!-- <img
+            src="./assets/flower-right-mid.png"
+            alt=""
+            class="gift-transition-flower"
+          /> -->
         </div>
 
-        <p class="guest-names" id="guestNames" style="visibility: hidden"></p>
+        <section class="gift-section">
+          <h3 class="section-title">gift registry</h3>
 
-        <p class="guest-count" id="guestCount" style="visibility: hidden">
-          <em>NUMBER OF PERSONS:</em> <span id="guestCountValue"></span>
-        </p>
-      </section>
-      <section class="rsvp-section">
-        <form
-          id="rsvp-event"
-          method="post"
-          class="rsvp-form"
-          action="https://script.google.com/macros/s/AKfycbze7zTzwkQmURCyCk71tR6MsH251VziVwfOK6fWdn2QB2p8Oymv7ywJmxr41Ww4aVaOBA/exec"
-        >
-          <input
-            type="hidden"
-            id="full_name"
-            name="full_name"
-            value="CHARBEL AAD & CORINE ABI JAOUDÉ"
-          />
-          <input type="hidden" id="gid" name="gid" value="" />
-          <input
-            type="hidden"
-            id="rsvp_email"
-            name="rsvp_email"
-            value="game@outlook.com"
-          />
-          <input
-            type="hidden"
-            id="wed_date"
-            name="wed_date"
-            value="2026-06-14 18:00:00"
-          />
-          <input type="hidden" id="nid" name="nid" value="723" />
-          <input type="hidden" id="override_nid" name="override_nid" value="" />
-          <input type="hidden" name="couple_name" value="Charbel & Corine" />
+          <p class="gift-text">
+            Your love, laughter &amp; presence are all<br />
+            we could wish for on our special day.<br />
+            For those who wish, a wedding registry<br />
+            is available at Whish Money
+          </p>
 
-          <p class="rsvp-question">ARE YOU ATTENDING?</p>
+          <p class="account-number">ACCOUNT NO: 20785854</p>
+        </section>
 
-          <select id="guests" name="guests" class="rsvp-select-field" required>
-            <option value="">SELECT</option>
-            <option value="1">YES ATTENDING</option>
-            <option value="na">NOT ATTENDING</option>
-          </select>
+        <section class="guest-section">
+          <div class="gift-guest-divider"></div>
 
-          <div class="rsvp-npersons-wrap">
-            <label class="rsvp-message-title" for="npersons"
-              >NUMBER OF ATTENDEES</label
+          <!-- <img
+            src="./assets/flower-left-small.png"
+            alt=""
+            class="gift-flower-left"
+          /> -->
+
+          <h3 class="section-title guest-title">be our guest</h3>
+
+          <div id="guestLoader" class="guest-loader">
+            <span class="spinner"></span>
+          </div>
+
+          <p class="guest-names" id="guestNames" style="visibility: hidden"></p>
+
+          <p class="guest-count" id="guestCount" style="visibility: hidden">
+            <em>NUMBER OF PERSONS:</em> <span id="guestCountValue"></span>
+          </p>
+        </section>
+        <section class="rsvp-section">
+          <form
+            id="rsvp-event"
+            method="post"
+            class="rsvp-form"
+            action="https://script.google.com/macros/s/AKfycbze7zTzwkQmURCyCk71tR6MsH251VziVwfOK6fWdn2QB2p8Oymv7ywJmxr41Ww4aVaOBA/exec"
+          >
+            <input
+              type="hidden"
+              id="full_name"
+              name="full_name"
+              value="CHARBEL AAD & CORINE ABI JAOUDÉ"
+            />
+            <input type="hidden" id="gid" name="gid" value="" />
+            <input
+              type="hidden"
+              id="rsvp_email"
+              name="rsvp_email"
+              value="game@outlook.com"
+            />
+            <input
+              type="hidden"
+              id="wed_date"
+              name="wed_date"
+              value="2026-06-14 18:00:00"
+            />
+            <input type="hidden" id="nid" name="nid" value="723" />
+            <input
+              type="hidden"
+              id="override_nid"
+              name="override_nid"
+              value=""
+            />
+            <input type="hidden" name="couple_name" value="Charbel & Corine" />
+
+            <p class="rsvp-question">ARE YOU ATTENDING?</p>
+
+            <select
+              id="guests"
+              name="guests"
+              class="rsvp-select-field"
+              required
             >
-            <select id="npersons" name="npersons" class="rsvp-select-field">
               <option value="">SELECT</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
+              <option value="1">YES ATTENDING</option>
+              <option value="na">NOT ATTENDING</option>
             </select>
-          </div>
 
-          <p class="rsvp-message-title">SHARE YOUR LOVE &amp; WISHES</p>
+            <div class="rsvp-npersons-wrap">
+              <label class="rsvp-message-title" for="npersons"
+                >NUMBER OF ATTENDEES</label
+              >
+              <select id="npersons" name="npersons" class="rsvp-select-field">
+                <option value="">SELECT</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
 
-          <textarea
-            id="message"
-            name="message"
-            class="rsvp-message-field"
-            placeholder="WRITE A MESSAGE (OPTIONAL)"
-            maxlength="120"
-          ></textarea>
+            <p class="rsvp-message-title">SHARE YOUR LOVE &amp; WISHES</p>
 
-          <p class="rsvp-deadline">PLEASE REPLY BEFORE MAY 14, 2026</p>
+            <textarea
+              id="message"
+              name="message"
+              class="rsvp-message-field"
+              placeholder="WRITE A MESSAGE (OPTIONAL)"
+              maxlength="120"
+            ></textarea>
 
-          <button id="submit_rsvp" class="rsvp-button" type="submit">
-            RSVP NOW!
-          </button>
+            <p class="rsvp-deadline">PLEASE REPLY BEFORE MAY 14, 2026</p>
 
-          <div class="ajax_success_message" id="ajaxSuccessMessage">
-            <p>Thank you for your confirmation!<br />See you there :)</p>
-          </div>
-        </form>
-      </section>
-      <!-- <section class="rsvp-section">
+            <button id="submit_rsvp" class="rsvp-button" type="submit">
+              RSVP NOW!
+            </button>
+
+            <div class="ajax_success_message" id="ajaxSuccessMessage">
+              <p>Thank you for your confirmation!<br />See you there :)</p>
+            </div>
+          </form>
+        </section>
+        <!-- <section class="rsvp-section">
         <p class="rsvp-question">ARE YOU ATTENDING?</p>
 
         <div class="rsvp-select">
@@ -1326,6 +1497,7 @@
 
         <button class="rsvp-button" type="button">RSVP NOW!</button>
       </section> -->
-    </main>
+      </main>
+    </div>
   </body>
 </html>
