@@ -324,31 +324,35 @@
 
       .intro p {
         font-family: "Montserrat", sans-serif;
-        font-size: 14px;
-        line-height: 23px;
+        font-size: 17px;
+        line-height: 25px;
         letter-spacing: 0.35px;
         color: var(--text-primary);
       }
 
       .parents-grid {
-        width: 340px;
+        width: 380px;
         margin: 0 auto 54px;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        gap: 24px;
+        gap: 10px;
+        position: relative;
+        z-index: 2;
+        background-color: var(--bg-main);
+        box-shadow: 0 0 20px 20px var(--bg-main);
       }
 
       .parent-side {
-        width: 140px;
+        width: 180px;
         text-align: center;
         color: var(--text-primary);
       }
 
       .parent-label {
         font-family: "Montserrat", sans-serif;
-        font-size: 12px;
-        line-height: 10.8px;
+        font-size: 14px;
+        line-height: 12.8px;
         text-transform: uppercase;
         margin-bottom: 14px;
         color: var(--text-primary);
@@ -357,8 +361,8 @@
       .parent-names {
         font-family: "Cinzel", serif;
         font-weight: 500;
-        font-size: 15px;
-        line-height: 23px;
+        font-size: 18px;
+        line-height: 26px;
         text-transform: uppercase;
         color: var(--text-primary);
       }
@@ -367,11 +371,15 @@
         width: 313px;
         margin: 0 auto;
         font-family: "Montserrat", sans-serif;
-        font-size: 14px;
-        line-height: 23px;
+        font-size: 17px;
+        line-height: 25px;
         letter-spacing: 0.35px;
         text-align: center;
         color: #707070;
+        position: relative;
+        z-index: 2;
+        background-color: var(--bg-main);
+        box-shadow: 0 0 15px 15px var(--bg-main);
       }
       .flower-bottom-right {
         position: absolute;
@@ -461,8 +469,8 @@
 
       .event-label {
         font-family: "Montserrat", sans-serif;
-        font-size: 14px;
-        line-height: 10.8px;
+        font-size: 16px;
+        line-height: 12.8px;
         letter-spacing: 0.35px;
         text-transform: uppercase;
         color: var(--text-primary);
@@ -471,8 +479,8 @@
 
       .event-place {
         font-family: "Cinzel", serif;
-        font-size: 17px;
-        line-height: 10.8px;
+        font-size: 19px;
+        line-height: 12.8px;
         font-weight: 600;
         text-transform: uppercase;
         color: var(--text-primary);
@@ -482,8 +490,8 @@
 
       .event-time {
         font-family: "Montserrat", sans-serif;
-        font-size: 14px;
-        line-height: 10.8px;
+        font-size: 16px;
+        line-height: 12.8px;
         letter-spacing: 0.35px;
         font-style: italic;
         text-transform: uppercase;
@@ -568,8 +576,8 @@
         width: 288px;
         margin: 0 auto 44px;
         font-family: "Montserrat", sans-serif;
-        font-size: 14px;
-        line-height: 23px;
+        font-size: 17px;
+        line-height: 25px;
         letter-spacing: 0.35px;
         color: var(--text-primary);
         text-align: center;
@@ -579,8 +587,8 @@
         width: 230px;
         margin: 0 auto;
         font-family: "Montserrat", sans-serif;
-        font-size: 18px;
-        line-height: 22px;
+        font-size: 20px;
+        line-height: 24px;
         letter-spacing: 0.45px;
         text-transform: uppercase;
         color: var(--text-primary);
@@ -622,8 +630,8 @@
         width: 230px;
         margin: 0 auto 22px;
         font-family: "Montserrat", sans-serif;
-        font-size: 18px;
-        line-height: 28px;
+        font-size: 20px;
+        line-height: 30px;
         letter-spacing: 0.4px;
         text-transform: uppercase;
         color: #707070; /* Ensure the text is visible */
@@ -1107,14 +1115,14 @@
       .account-number   { width: min(230px, 88%); white-space: normal; }
       .guest-names      { width: min(230px, 88%); }
       .guest-count      { width: min(220px, 88%); white-space: normal; }
-      .parents-grid     { width: min(340px, calc(100% - 40px)); }
-      .parent-side      { width: 48%; }
+      .parents-grid     { width: min(380px, calc(100% - 20px)); }
+      .parent-side      { width: 49%; }
 
       /* Celebration */
       .celebration-couple { width: min(214px, 88%); }
       .celebration-date   { width: min(218px, 88%); }
-      .celebration-title,
-      .section-title      { white-space: normal; }
+      .celebration-title { white-space: normal; }
+      .section-title     { white-space: nowrap; width: 100%; }
 
       /* Location button */
       .location-button { width: min(208px, 65%); }
@@ -1497,7 +1505,7 @@
 
             <div class="parent-side">
               <p class="parent-label">MR. &amp; MRS.</p>
-              <p class="parent-names">PIERRE &amp; RIMA ABI JAOUDÉ</p>
+              <p class="parent-names">PIERRE &amp; RIMA<br />ABI JAOUDÉ</p>
             </div>
           </div>
 
