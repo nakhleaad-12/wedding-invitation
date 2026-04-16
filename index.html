@@ -262,11 +262,9 @@
 
       .verse {
         display: block;
-        width: 63px;
-        margin-top: 6px;
-        margin-left: auto;
-        margin-right: 58px;
-        text-align: left;
+        width: min(312px, 88%);  /* same width as the quote */
+        margin: 8px auto 0;
+        text-align: right;       /* right-align under the quote */
         font-family: "Cinzel", serif;
         font-weight: 500;
         font-size: 12px;
@@ -274,6 +272,7 @@
         letter-spacing: 0.3px;
         text-transform: uppercase;
         color: var(--text-primary);
+        white-space: nowrap;
       }
 
       .divider {
@@ -1581,7 +1580,7 @@
             is available at Whish Money
           </p>
 
-          <p class="account-number">ACCOUNT NO: 20785854</p>
+          <p class="account-number">ACCOUNT NO: 20785854-03</p>
         </section>
 
         <section class="guest-section">
