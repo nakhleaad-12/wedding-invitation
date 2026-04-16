@@ -22,32 +22,58 @@
       .main-screen {
         position: relative;
         width: 100%;
-        min-height: 100vh; /* Allow the content to take the full height */
-        overflow: auto; /* Allow scrolling for content */
-        background: url("./assets/background.jpg") repeat center top; /* Repeat image vertically */
-        background-size: auto; /* Let it repeat at natural size */
+        min-height: 100vh;
+        overflow: auto;
+        background: url("./assets/background.jpg") repeat center top; /* Original background */
+        background-size: 100% auto;
+      }
+
+      .background-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Keep this behind the content */
+      }
+
+      .background-img1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensure the image covers the full screen */
+        z-index: -2; /* Place this even further behind the content */
       }
 
       .main-content {
         position: relative;
-        z-index: 1; /* Ensure content stays on top */
-        max-width: 430px;
-        margin: 0 auto;
-        padding: 0;
+        z-index: 1; /* Ensure content stays on top of the background */
+        color: white;
+        padding: 20px;
         text-align: center;
         min-height: 100vh;
-        background: var(--bg-main); /* Beige background for content area */
       }
       .countdown {
         position: relative;
-        width: 430px;
-        height: 198px;
-        margin: 0 auto;
+        width: 430px; /* Fixed width, adjust if needed */
+        height: 198px; /* Fixed height, adjust if needed */
         overflow: hidden;
         background: #ffffff; /* White background for countdown */
+        box-sizing: border-box;
       }
 
-      /* Add beige background to individual sections that need it */
+      @media (max-width: 460px) {
+        .countdown {
+          width: 450px; /* Full width on smaller screens */
+          background: #ffffff;
+          box-sizing: border-box;
+        }
+      }
+      .main-content {
+        padding: 0 20px; /* Optional: Add some padding to main content for better spacing */
+      }
 
       :root {
         --bg-main: #f8f4ee;
@@ -601,8 +627,9 @@
         line-height: 28px;
         letter-spacing: 0.4px;
         text-transform: uppercase;
-        color: var(--text-primary);
+        color: #707070; /* Ensure the text is visible */
         text-align: center;
+        visibility: visible; /* Ensure visibility is visible */
       }
 
       .guest-count {
@@ -616,6 +643,7 @@
         color: var(--text-primary);
         text-align: center;
         white-space: nowrap;
+        visibility: visible; /* Ensure visibility is visible */
       }
 
       .guest-count em {
@@ -933,15 +961,9 @@
             width: 100%;
             max-width: 100%;
           }
-
-          .countdown {
-            width: 100%;
-            max-width: 430px;
-          }
         }
 
-        .hero,
-        .countdown {
+        .hero {
           width: 100%;
         }
 
@@ -1045,6 +1067,7 @@
       const npersonsField = document.getElementById("npersons");
       const submitBtn = document.getElementById("submit_rsvp");
       const successBox = document.getElementById("ajaxSuccessMessage");
+      const noMessageBox = document.getElementById("noMessage"); // Add "No" message element
 
       const guestLoader = document.getElementById("guestLoader");
       const guestNamesBox = document.getElementById("guestNames");
@@ -1192,10 +1215,18 @@
           const result = await response.json();
 
           if (result.result === "success" || result.status === "success") {
+            const wasAttending = guestsField.value === "1";
             form.reset();
             togglePersonsField();
-            successBox.style.display = "block";
             submitBtn.style.display = "none";
+
+            if (wasAttending) {
+              successBox.style.display = "block";
+              if (noMessageBox) noMessageBox.style.display = "none";
+            } else {
+              if (noMessageBox) noMessageBox.style.display = "block";
+              successBox.style.display = "none";
+            }
           } else {
             alert("Something went wrong. Please try again.");
             submitBtn.disabled = false;
@@ -1209,6 +1240,7 @@
         }
       });
     });
+    // JavaScript code to print guest name and count in the console
   </script>
   <body>
     <div id="welcomeScreen" class="welcome-screen">
@@ -1394,9 +1426,9 @@
             <span class="spinner"></span>
           </div>
 
-          <p class="guest-names" id="guestNames" style="visibility: hidden"></p>
+          <p class="guest-names" id="guestNames"></p>
 
-          <p class="guest-count" id="guestCount" style="visibility: hidden">
+          <p class="guest-count" id="guestCount">
             <em>NUMBER OF PERSONS:</em> <span id="guestCountValue"></span>
           </p>
         </section>
@@ -1477,6 +1509,13 @@
 
             <div class="ajax_success_message" id="ajaxSuccessMessage">
               <p>Thank you for your confirmation!<br />See you there :)</p>
+            </div>
+            <div
+              id="noMessage"
+              class="ajax_success_message"
+              style="display: none"
+            >
+              <p>We're sorry you can't make it.<br />You will be missed! 💛</p>
             </div>
           </form>
         </section>
