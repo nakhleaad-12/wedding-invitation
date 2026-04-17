@@ -398,7 +398,6 @@
         position: relative;
         text-align: center;
         padding: 0 20px;
-        min-height: 520px;
         overflow: hidden;
       }
 
@@ -414,7 +413,8 @@
       }
 
       .celebration-date {
-        width: 218px;
+        width: 100%;
+        white-space: nowrap;
         margin: 0 auto 0;
         font-family: "Montserrat", sans-serif;
         font-size: 18px;
@@ -422,6 +422,7 @@
         text-transform: uppercase;
         color: var(--text-primary);
         text-align: center;
+        padding-bottom: 10px;
       }
 
       .celebration-divider {
@@ -1119,7 +1120,7 @@
 
       /* Celebration */
       .celebration-couple { width: min(214px, 88%); }
-      .celebration-date   { width: min(218px, 88%); }
+      .celebration-date   { width: 100%; white-space: nowrap; }
       .celebration-title { white-space: normal; }
       .section-title     { white-space: nowrap; width: 100%; }
 
@@ -1536,9 +1537,9 @@
           /> -->
         </section>
 
-        <section class="celebration-section">
-          <div class="celebration-divider"></div>
+        <div class="celebration-divider"></div>
 
+        <section class="celebration-section">
           <h3 class="celebration-title">the celebration</h3>
 
           <div class="event-block ceremony-block">
