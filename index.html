@@ -1735,13 +1735,27 @@
     </audio>
 
     <script>
-      // Attempt to immediately play audio when the document is ready
-      document.addEventListener("DOMContentLoaded", function () {
+      function playMusic() {
         const bgMusic = document.getElementById("bgMusic");
-        if (bgMusic) {
-          bgMusic.play().catch(Function.prototype); // Silently catch browser auto-play blocks
+        if (bgMusic && bgMusic.paused) {
+          bgMusic.play()
+            .then(() => {
+              // Once it starts playing, we can remove the listeners
+              ["click", "touchstart", "scroll", "keydown"].forEach(event => 
+                document.removeEventListener(event, playMusic)
+              );
+            })
+            .catch((err) => console.log("Autoplay still blocked:", err));
         }
-      });
+      }
+
+      // Add listeners for any interaction
+      ["click", "touchstart", "scroll", "keydown"].forEach(event => 
+        document.addEventListener(event, playMusic, { once: true })
+      );
+
+      // Also try immediately (for non-strict browsers)
+      document.addEventListener("DOMContentLoaded", playMusic);
     </script>
   </body>
 </html>
