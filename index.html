@@ -246,7 +246,7 @@
         position: relative;
         padding-bottom: 20px;
         text-align: center;
-        padding: 98px 30px 40px;
+        padding: 60px 30px 20px;
         overflow: hidden;
       }
 
@@ -278,7 +278,7 @@
       .divider {
         width: 73px;
         height: 1px;
-        margin: 80px auto;
+        margin: 50px auto;
         background-color: #707070;
         opacity: 0.9;
       }
@@ -428,7 +428,7 @@
       .celebration-divider {
         width: 74px;
         height: 1px;
-        margin: 80px auto;
+        margin: 50px auto;
         background-color: #707070;
       }
 
@@ -531,7 +531,7 @@
       .gift-transition-divider {
         width: 74px;
         height: 1px;
-        margin: 80px auto;
+        margin: 50px auto;
         background-color: #707070;
 
         opacity: 0.9;
@@ -605,7 +605,7 @@
       .gift-guest-divider {
         width: 74px;
         height: 1px;
-        margin: 80px auto;
+        margin: 50px auto;
         background-color: #707070;
         opacity: 0.9;
       }
@@ -1727,8 +1727,18 @@
       </main>
     </div>
 
-    <audio id="bgMusic" loop preload="auto">
+    <audio id="bgMusic" loop autoplay preload="auto">
       <source src="./assets/music.mp3" type="audio/mpeg" />
     </audio>
+
+    <script>
+      // Attempt to immediately play audio when the document is ready
+      document.addEventListener("DOMContentLoaded", function () {
+        const bgMusic = document.getElementById("bgMusic");
+        if (bgMusic) {
+          bgMusic.play().catch(Function.prototype); // Silently catch browser auto-play blocks
+        }
+      });
+    </script>
   </body>
 </html>
