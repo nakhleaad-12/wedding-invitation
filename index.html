@@ -1217,10 +1217,7 @@
 
       if (startBtn && welcomeScreen && mainContent) {
         startBtn.addEventListener("click", function () {
-          const bgMusic = document.getElementById("bgMusic");
-          if (bgMusic) {
-            bgMusic.play().catch((err) => console.log("Audio play failed:", err));
-          }
+
 
           welcomeScreen.style.opacity = "0";
           welcomeScreen.style.transition = "opacity 0.4s ease";
@@ -1742,7 +1739,7 @@
           bgMusic.play()
             .then(() => {
               // Once it starts playing, we can remove the listeners
-              ["click", "touchstart", "scroll", "keydown"].forEach(event => 
+              ["click", "touchstart", "mousedown", "scroll", "keydown"].forEach(event => 
                 document.removeEventListener(event, playMusic)
               );
             })
@@ -1751,7 +1748,7 @@
       }
 
       // Add listeners for any interaction
-      ["click", "touchstart", "scroll", "keydown"].forEach(event => 
+      ["click", "touchstart", "mousedown", "scroll", "keydown"].forEach(event => 
         document.addEventListener(event, playMusic, { once: true })
       );
 
