@@ -276,16 +276,16 @@
       }
 
       .divider {
-        width: 1px;
-        height: 73px;
-        margin: 30px auto 0;
+        width: 73px;
+        height: 1px;
+        margin: 80px auto;
         background-color: #707070;
         opacity: 0.9;
       }
 
       .parents-section {
         position: relative;
-        padding: 10px 0 60px;
+        padding: 0;
         text-align: center;
         overflow: hidden;
       }
@@ -316,7 +316,7 @@
   transform-origin: top right;
 } */
       .intro {
-        margin: 0 0 62px;
+        margin: 0 0 25px;
         text-align: center;
         position: relative;
         z-index: 2;
@@ -332,7 +332,7 @@
 
       .parents-grid {
         width: 380px;
-        margin: 0 auto 54px;
+        margin: 0 auto 50px;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
@@ -369,7 +369,7 @@
 
       .invitation-text {
         width: 380px;
-        margin: 0 auto;
+        margin: 0 auto 50px;
         font-family: "Montserrat", sans-serif;
         font-size: 17px;
         line-height: 25px;
@@ -397,7 +397,7 @@
       .celebration-section {
         position: relative;
         text-align: center;
-        padding: 30px 20px 20px;
+        padding: 0 20px;
         min-height: 520px;
         overflow: hidden;
       }
@@ -415,7 +415,7 @@
 
       .celebration-date {
         width: 218px;
-        margin: 0 auto 50px;
+        margin: 0 auto 0;
         font-family: "Montserrat", sans-serif;
         font-size: 18px;
         line-height: 10.8px;
@@ -425,9 +425,9 @@
       }
 
       .celebration-divider {
-        width: 1px;
-        height: 74px;
-        margin: 0 auto 50px;
+        width: 74px;
+        height: 1px;
+        margin: 80px auto;
         background-color: #707070;
       }
 
@@ -460,11 +460,11 @@
       }
 
       .ceremony-block {
-        margin-top: 62px;
+        margin-top: 25px;
       }
 
       .party-block {
-        margin-top: 78px;
+        margin-top: 40px;
       }
 
       .event-label {
@@ -474,7 +474,7 @@
         letter-spacing: 0.35px;
         text-transform: uppercase;
         color: var(--text-primary);
-        margin-bottom: 28px;
+        margin-bottom: 12px;
       }
 
       .event-place {
@@ -484,7 +484,7 @@
         font-weight: 600;
         text-transform: uppercase;
         color: var(--text-primary);
-        margin-bottom: 28px;
+        margin-bottom: 12px;
         white-space: nowrap;
       }
 
@@ -496,7 +496,7 @@
         font-style: italic;
         text-transform: uppercase;
         color: var(--text-primary);
-        margin-bottom: 29px;
+        margin-bottom: 15px;
       }
 
       .location-button {
@@ -518,20 +518,19 @@
       }
 
       .party-location-button {
-        margin-top: 29px;
+        margin-top: 20px;
         background-color: #ffffff;
       }
 
       .gift-transition {
         position: relative;
-        height: 120px;
-        overflow: hidden;
+        height: auto;
       }
 
       .gift-transition-divider {
-        width: 1px;
-        height: 74px;
-        margin: 30px auto 0;
+        width: 74px;
+        height: 1px;
+        margin: 80px auto;
         background-color: #707070;
 
         opacity: 0.9;
@@ -550,7 +549,7 @@
       .gift-section {
         position: relative;
         text-align: center;
-        padding: 32px 20px 20px;
+        padding: 0 20px;
         overflow: hidden;
       }
 
@@ -569,12 +568,12 @@
 
       .gift-section .section-title {
         width: 252px;
-        margin: 0 auto 58px;
+        margin: 0 auto 25px;
       }
 
       .gift-text {
         width: 288px;
-        margin: 0 auto 44px;
+        margin: 0 auto 25px;
         font-family: "Montserrat", sans-serif;
         font-size: 17px;
         line-height: 25px;
@@ -598,14 +597,14 @@
       .guest-section {
         position: relative;
         text-align: center;
-        padding: 30px 20px 54px;
+        padding: 0 20px;
         overflow: hidden;
       }
 
       .gift-guest-divider {
-        width: 1px;
-        height: 74px;
-        margin: 0 auto 50px;
+        width: 74px;
+        height: 1px;
+        margin: 80px auto;
         background-color: #707070;
         opacity: 0.9;
       }
@@ -622,13 +621,13 @@
 
       .guest-title {
         width: 246px;
-        margin: 0 auto 72px;
+        margin: 0 auto 25px;
         white-space: nowrap;
       }
 
       .guest-names {
         width: 230px;
-        margin: 0 auto 22px;
+        margin: 0 auto 15px;
         font-family: "Montserrat", sans-serif;
         font-size: 20px;
         line-height: 30px;
@@ -1214,6 +1213,11 @@
 
       if (startBtn && welcomeScreen && mainContent) {
         startBtn.addEventListener("click", function () {
+          const bgMusic = document.getElementById("bgMusic");
+          if (bgMusic) {
+            bgMusic.play().catch((err) => console.log("Audio play failed:", err));
+          }
+
           welcomeScreen.style.opacity = "0";
           welcomeScreen.style.transition = "opacity 0.4s ease";
 
@@ -1442,6 +1446,9 @@
           class="background-img1"
         />
       </div> -->
+
+
+
       <main class="main-content">
         <section class="hero">
           <div class="date-bg">
@@ -1514,14 +1521,6 @@
             at the wedding of their son &amp; daughter
           </p>
 
-          <!-- <img
-            src="./assets/flower-top-right.png"
-            alt=""
-            class="flower-bottom-right"
-          /> -->
-        </section>
-
-        <section class="celebration-section">
           <h2 class="celebration-couple">
             Charbel<br />
             &amp;<br />
@@ -1530,6 +1529,14 @@
 
           <p class="celebration-date">SUNDAY, JUNE 14, 2026</p>
 
+          <!-- <img
+            src="./assets/flower-top-right.png"
+            alt=""
+            class="flower-bottom-right"
+          /> -->
+        </section>
+
+        <section class="celebration-section">
           <div class="celebration-divider"></div>
 
           <h3 class="celebration-title">the celebration</h3>
@@ -1718,5 +1725,9 @@
       </section> -->
       </main>
     </div>
+
+    <audio id="bgMusic" loop preload="auto">
+      <source src="./assets/music.mp3" type="audio/mpeg" />
+    </audio>
   </body>
 </html>
