@@ -1738,6 +1738,7 @@
       function playMusic() {
         const bgMusic = document.getElementById("bgMusic");
         if (bgMusic && bgMusic.paused) {
+          bgMusic.currentTime = 3; // Jump past the 3 seconds of silence
           bgMusic.play()
             .then(() => {
               // Once it starts playing, we can remove the listeners
